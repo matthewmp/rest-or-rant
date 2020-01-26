@@ -4,7 +4,9 @@
   "description": "Seating, Reservation, & Dining Room Manager",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watch",
+    "start": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html --public-url ./"
   },
   "keywords": [
     "waiting",
@@ -16,5 +18,13 @@
     "application"
   ],
   "author": "Matthew Palumbo",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "babel-jest": "^25.1.0",
+    "jest": "^25.1.0",
+    "parcel-bundler": "^1.12.4"
+  }
 }
