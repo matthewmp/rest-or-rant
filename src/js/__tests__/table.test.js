@@ -1,4 +1,4 @@
-import sectionManager from '../models/sections/SectionMgr';
+import sectionManager from '../models/sections/SectionMgr.Model';
 import Table from '../models/table/Table';
 
 test('should create an instance of Table class', () => {

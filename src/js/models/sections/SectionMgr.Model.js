@@ -15,7 +15,7 @@ class SectionManager {
         } else {
             throw new Error('Duplicate Section Name');
         }
-        
+        // this.onSectoinManagerChange(this.sections);
     }
 
     isSectionNameValid(sectionName) {
@@ -33,6 +33,7 @@ class SectionManager {
 
     clearAllSections(){
         this.sections.length = 0;
+        // this.onSectoinManagerChange(this.sections);
     }
 }
 

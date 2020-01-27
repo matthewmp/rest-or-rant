@@ -1,4 +1,4 @@
-import sectionManager from '../components/sections/SectionMgr';
+import sectionManager from '../models/sections/SectionMgr.Model';
 
 test('should throw error for trying to instantiate', () => {
     expect(() => {

@@ -1,5 +1,5 @@
-import sectionManager from '../components/sections/SectionMgr';
-import Section from '../components/sections/Section';
+import sectionManager from '../models/sections/SectionMgr.Model';
+import Section from '../models/sections/Section.Model';
 
 beforeEach(() => {
     sectionManager.clearAllSections();

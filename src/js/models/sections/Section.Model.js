@@ -1,4 +1,4 @@
-import sectionManager from './SectionMgr';
+import sectionManager from './SectionMgr.Model';
 
 export default class Section {
     constructor(sectionName){
