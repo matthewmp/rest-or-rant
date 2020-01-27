@@ -14,6 +14,6 @@ Manage your restaurant's reservation book
 - MongoDB
 - Mongoose
 
-## `npm install`
-## `npm run start`
-## `npm run build`
+# `npm install`
+# `npm run start`
+# `npm run build`
