@@ -35,11 +35,12 @@ test('toggle table availablity from true/false & vice/versa', () => {
 })
 
 describe('assign and change section associated with table', () => {
+    let newTable;
     beforeEach(() => {
-        const newTable = new Table(1,4);
+        newTable = new Table(1,4);
     })
 
-    it('checks for initial value of null for assigned section', () => {
+    test('checks for initial value of null for assigned section', () => {
         newTable.assignedSection     
     })
 })
