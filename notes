@@ -1,8 +1,11 @@
-- Make Controllers / Views for models
+- Make Controllers / Views for models (Mobile First)
 - Create Customer Model
 - Add Open # of Tables/Filled % Components as Section children
 - Add to Table class (customer currently seated, 
   length of time at table, next customer, next customer res. time)
+
+- Add undo/redo with state managment
+- Add Error Logger/Handler Class
 
 - Add session persistance (local storage)
 - Add account persistance (MongoDB)
