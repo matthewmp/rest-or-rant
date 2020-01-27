@@ -1,5 +1,5 @@
-### Rest-Or-Rant
-# Waiting List / Reservation / Dining Room Manager
+# Rest-Or-Rant
+## Waiting List / Reservation / Dining Room Manager
 
 Manage your restaurant's waiting list for restaurants
 Manage your restaurant's reservation book
@@ -9,7 +9,7 @@ Manage your restaurant's reservation book
 - Jest
 - OO JavaScript MVC & other design patterns(no frameworks)
 
-# Possible future additions
+## Possible future additions
 - Express
 - MongoDB
 - Mongoose
