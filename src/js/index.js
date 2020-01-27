@@ -1,5 +1,5 @@
-import Section from './models/sections/Section';
-import sectionManager from './models/sections/SectionMgr';
+import Section from './models/sections/Section.Model';
+import sectionManager from './models/sections/SectionMgr.Model';
 import Table from './models/table/Table';
 
 let sectionA = new Section('A');
