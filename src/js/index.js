@@ -7,7 +7,7 @@ sectionA.setServerName('Matt');
 
 let sectionB = new Section('B');
 
-let table = new Table();
+let table = new Table(1, 4);
 console.log(sectionA, sectionB);
 console.log(sectionManager)
 console.log(table);
