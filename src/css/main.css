@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+cBlue2 {
+    background: #4CD8DB;
+}
+
+.section-manager-container {
+    /* display: flex; */
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    min-height: 50px;
+    background: #4CD8DB;
+    color: #fff;
+}
+
+.section-manager-title {
+    display: inline-block;
+}
+
+.add-section-container {
+    float: right;
+    line-height: 50px;
+}
