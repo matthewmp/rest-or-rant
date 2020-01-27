@@ -4,6 +4,7 @@ export default class Section {
     constructor(sectionName){
         this.sectionName = null;
         this.serverName = null;
+        this.tables = [];
 
         // Check for name availability
         const name = sectionName.trim();

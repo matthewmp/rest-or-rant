@@ -1,7 +1,16 @@
+import sectionManager from '../models/sections/SectionMgr';
 import Table from '../models/table/Table';
 
 test('should create an instance of Table class', () => {
-    const newTable = new Table();
+    expect(() => { // Requires 2 params (table #, max # of guests)
+        const newTable = new Table();
+    }).toThrow();
+
+    expect(() => {  // Requires 2 params of type number
+        const newTable = new Table('1', '2');
+    })
+
+    const newTable = new Table(1,2);
 
     expect(newTable instanceof Table).toBe(true);
 })
@@ -23,4 +32,14 @@ test('toggle table availablity from true/false & vice/versa', () => {
 
     newTable.toggleAvailability();
     expect(newTable.available).toBe(true);
+})
+
+describe('assign and change section associated with table', () => {
+    beforeEach(() => {
+        const newTable = new Table(1,4);
+    })
+
+    it('checks for initial value of null for assigned section', () => {
+        newTable.assignedSection     
+    })
 })

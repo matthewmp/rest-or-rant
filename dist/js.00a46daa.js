@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/components/sections/SectionMgr.js":[function(require,module,exports) {
+})({"js/models/sections/SectionMgr.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -186,7 +186,7 @@ var sectionManager = new SectionManager();
 Object.freeze(sectionManager);
 var _default = sectionManager;
 exports.default = _default;
-},{}],"js/components/sections/Section.js":[function(require,module,exports) {
+},{}],"js/models/sections/Section.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -211,7 +211,8 @@ function () {
     _classCallCheck(this, Section);
 
     this.sectionName = null;
-    this.serverName = null; // Check for name availability
+    this.serverName = null;
+    this.tables = []; // Check for name availability
 
     var name = sectionName.trim();
 
@@ -241,21 +242,68 @@ function () {
 }();
 
 exports.default = Section;
-},{"./SectionMgr":"js/components/sections/SectionMgr.js"}],"js/index.js":[function(require,module,exports) {
+},{"./SectionMgr":"js/models/sections/SectionMgr.js"}],"js/models/table/Table.js":[function(require,module,exports) {
 "use strict";
 
-var _Section = _interopRequireDefault(require("./components/sections/Section"));
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
 
-var _SectionMgr = _interopRequireDefault(require("./components/sections/SectionMgr"));
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Table =
+/*#__PURE__*/
+function () {
+  function Table(tableNumber, numberOfSeats) {
+    _classCallCheck(this, Table);
+
+    if (arguments.length < 2) {
+      throw new Error('Table number and number of seats are required to create a new table');
+    } else if (typeof arguments[0] !== 'number' || typeof arguments[1] !== 'number') {
+      throw new Error('Two numbers are required for table # and max # of guests per table');
+    }
+
+    this.tableNumber = tableNumber;
+    this.numberOfSeats = numberOfSeats;
+    this.available = true;
+    this.assignedSection = null;
+  }
+
+  _createClass(Table, [{
+    key: "toggleAvailability",
+    value: function toggleAvailability() {
+      this.available = !this.available;
+    }
+  }]);
+
+  return Table;
+}();
+
+exports.default = Table;
+},{}],"js/index.js":[function(require,module,exports) {
+"use strict";
+
+var _Section = _interopRequireDefault(require("./models/sections/Section"));
+
+var _SectionMgr = _interopRequireDefault(require("./models/sections/SectionMgr"));
+
+var _Table = _interopRequireDefault(require("./models/table/Table"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var sectionA = new _Section.default('A');
 sectionA.setServerName('Matt');
 var sectionB = new _Section.default('B');
+var table = new _Table.default();
 console.log(sectionA, sectionB);
 console.log(_SectionMgr.default);
-},{"./components/sections/Section":"js/components/sections/Section.js","./components/sections/SectionMgr":"js/components/sections/SectionMgr.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+console.log(table);
+},{"./models/sections/Section":"js/models/sections/Section.js","./models/sections/SectionMgr":"js/models/sections/SectionMgr.js","./models/table/Table":"js/models/table/Table.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
