@@ -8,6 +8,7 @@ Manage your restaurant's reservation book
 - Parcel
 - Jest
 - OO JavaScript MVC & other design patterns(no frameworks)
+- Flexbox
 
 ## Possible future additions
 - Express
