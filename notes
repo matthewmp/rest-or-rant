@@ -1,0 +1,9 @@
+- Make Controllers / Views for models
+- Create Customer Model
+- Add Open # of Tables/Filled % Components as Section children
+- Add to Table class (customer currently seated, 
+  length of time at table, next customer, next customer res. time)
+
+- Add session persistance (local storage)
+- Add account persistance (MongoDB)
+- Add authentication
