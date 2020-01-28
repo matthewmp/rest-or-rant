@@ -1,6 +1,9 @@
 import Section from './models/sections/Section.Model';
 import sectionManager from './models/sections/SectionMgr.Model';
 import Table from './models/table/Table';
+import SectionMgrView from './views/SectionMgr.View';
+
+import '../css/main.css';
 
 let sectionA = new Section('A');
 sectionA.setServerName('Matt');
@@ -11,3 +14,6 @@ let table = new Table(1, 4);
 console.log(sectionA, sectionB);
 console.log(sectionManager)
 console.log(table);
+
+const smView = new SectionMgrView();
+smView.render();

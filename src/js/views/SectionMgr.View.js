@@ -12,9 +12,11 @@ export default class SectionManagerView {
             </div>
         </section>
         `;
+
+
     }
 
-    render() {
-        
+    render(){
+        this.app.innerHTML = this.template;
     }
 }

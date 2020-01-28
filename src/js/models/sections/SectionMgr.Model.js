@@ -13,7 +13,7 @@ class SectionManager {
         if(this.isSectionNameValid(section.sectionName)){
             this.sections.push(section);
         } else {
-            throw new Error('Duplicate Section Name');
+            throw new Error('Duplicate Section Name', this.sections);
         }
         // this.onSectoinManagerChange(this.sections);
     }
