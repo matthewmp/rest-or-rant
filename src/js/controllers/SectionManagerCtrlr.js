@@ -6,6 +6,8 @@ export default class SectionManagerController {
     constructor(model, view) {
         this.model = model;
         this.view = view;
+
+        this.view.render();
     }
 
     addSection(section) {

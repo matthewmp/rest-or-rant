@@ -1,3 +1,4 @@
+- Abstract out isSectionNameValid from SectionMgr to lib
 - Make Controllers / Views for models (Mobile First)
 - Create Customer Model
 - Add Open # of Tables/Filled % Components as Section children
