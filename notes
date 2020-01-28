@@ -10,3 +10,5 @@
 - Add session persistance (local storage)
 - Add account persistance (MongoDB)
 - Add authentication
+
+** Pull section and finish render tests on smCtrlr
