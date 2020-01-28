@@ -11,3 +11,5 @@
 - Add session persistance (local storage)
 - Add account persistance (MongoDB)
 - Add authentication
+
+** Finish tests on section
