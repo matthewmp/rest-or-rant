@@ -1,8 +1,11 @@
 export default class SectionManagerView {
     constructor(){
         this.app = document.getElementById('root');
-        this.submitAddSectionForm = null;
+        this.conatainer = null;
+        this.addSectionContainer = null;
+        this.btnSubmitAddSectionForm = null;
         this.addSectionForm = null;
+        this.btnAddSection = null;
 
         this.template = `
         <section class="section-manager-container">
@@ -27,21 +30,37 @@ export default class SectionManagerView {
         this.app.innerHTML = this.template;
         document.querySelector('#form-add-section').style.visibility = 'hidden';
         this.grabElements();
-        console.log(this.submitAddSectionForm, this.addSectionForm)
     }
 
     grabElements(){
-        this.addSectionForm = document.querySelector('#form-add-section');
-        this.submitAddSectionForm = this.addSectionForm.querySelector('.btn-add-section-form');
+        this.addSectionForm = this.app.querySelector('#form-add-section');
+        this.btnSubmitAddSectionForm = this.addSectionForm.querySelector('.btn-add-section-form');
+        this.container = this.app.querySelector('.section-manager-container');
+        this.btnAddSection = this.container.querySelector('#btn-add-section');
+    }
+
+    showAddSectionForm() {
+        this.addSectionForm.style.visibility = 'visible';
+    }
+
+    hideAddSectionForm() {
+        this.addSectionForm.style.visibility = 'hidden';
     }
 
     bindAddSectionFormSubmit(handler) {
-        this.submitAddSectionForm.addEventListener('click', event => {
+        this.btnSubmitAddSectionForm.addEventListener('click', event => {
             handler();
         })
     }
 
-    submitAddSectionForm(e) {
-        e.preventDefault();
+    bindBtnAddSection(handler) {
+        this.btnAddSection.addEventListener('click', (e) => {
+            e.preventDefault();
+            handler();
+        })
+    }
+
+    handleSubmitAddSectionForm(e) {
+        // e.preventDefault();
     }
 }

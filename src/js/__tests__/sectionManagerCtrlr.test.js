@@ -53,6 +53,7 @@ describe('should render all elements correctly', () => {
     let root;
     beforeEach(() => {
         root = document.querySelector('#root');
+        smCtrlr = new sectionManagerCtrlr(model, view);
     })
 
     test('should render root', ()=> {
@@ -71,21 +72,20 @@ describe('should render all elements correctly', () => {
         
         expect(smContainer.getElementsByTagName('button')[2].id).toEqual('btn-add-section');
         expect(smContainer.getElementsByTagName('button')[2].textContent).toEqual('+');
-
-        console.log(smContainer.getElementsByTagName('button'));
     })
 
     test('should render & toggle .form-add-section', () => {
         const smContainer = root.querySelector('.section-manager-container');
-        const form = document.querySelector('#form-add-section');
-        const btnAddSection = form.querySelector('.btn-add-section-form');
+        const form = smContainer.querySelector('#form-add-section');
+        const addSectionContainer = document.querySelector('.add-section-container');
+        const btnAddSection = addSectionContainer.querySelector('#btn-add-section')
 
         expect(window.getComputedStyle(form).visibility).toEqual('hidden');
         
         btnAddSection.click();
-        // expect(window.getComputedStyle(form).visibility).toEqual('visible');
-
+        expect(window.getComputedStyle(form).visibility).toEqual('visible');
         
+        // Close form
     })
 })
 
