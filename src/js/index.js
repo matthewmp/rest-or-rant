@@ -7,14 +7,5 @@ import SectionMgrView from './views/SectionMgr.View';
 
 import '../css/main.css';
 
-let sectionA = new Section('A');
-sectionA.setServerName('Matt');
-
-let sectionB = new Section('B');
-
-let table = new Table(1, 4);
-console.log(sectionA, sectionB);
-console.log(sectionManager)
-console.log(table);
-
 const smController = new SectionMgrController(sectionManager, new SectionMgrView());
+console.log(sectionManager);

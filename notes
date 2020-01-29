@@ -12,4 +12,5 @@
 - Add account persistance (MongoDB)
 - Add authentication
 
-** Finish tests on section
+** Bind Add Section (+)
+** Finish Binding Add Section Form Submit

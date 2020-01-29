@@ -8,6 +8,9 @@ export default class SectionManagerController {
         this.view = view;
 
         this.view.render();
+
+        // Bind events
+        this.view.bindAddSectionFormSubmit(this.handleAddSectionFormSubmit);
     }
 
     addSection(section) {
@@ -16,5 +19,9 @@ export default class SectionManagerController {
 
     clearAllSections() {
         this.model.clearAllSections();
+    }
+
+    handleAddSectionFormSubmit() {
+        console.log('Handled from Ctrlr');
     }
 }

@@ -61,7 +61,7 @@ describe('should render all elements correctly', () => {
 
     test('should render section-manager-container element', () => {
         const smContainer = root.querySelector('.section-manager-container');
-        
+
         expect(smContainer.children.length).toBe(2);
         expect(smContainer.children[0].className).toEqual('section-manager-title');
         expect(smContainer.children[1].className).toEqual('add-section-container');
@@ -69,10 +69,23 @@ describe('should render all elements correctly', () => {
         expect(smContainer.getElementsByTagName('h3')[0].textContent).toEqual('Restaurant Layout');
         expect(smContainer.getElementsByTagName('span')[0].textContent.trim()).toEqual('Add Section');
         
-        expect(smContainer.getElementsByTagName('button')[0].id).toEqual('btn-add-section')
-        expect(smContainer.getElementsByTagName('button')[0].textContent).toEqual('+')
+        expect(smContainer.getElementsByTagName('button')[2].id).toEqual('btn-add-section');
+        expect(smContainer.getElementsByTagName('button')[2].textContent).toEqual('+');
+
+        console.log(smContainer.getElementsByTagName('button'));
     })
 
+    test('should render & toggle .form-add-section', () => {
+        const smContainer = root.querySelector('.section-manager-container');
+        const form = document.querySelector('#form-add-section');
+        const btnAddSection = form.querySelector('.btn-add-section-form');
 
+        expect(window.getComputedStyle(form).visibility).toEqual('hidden');
+        
+        btnAddSection.click();
+        // expect(window.getComputedStyle(form).visibility).toEqual('visible');
+
+        
+    })
 })
 
