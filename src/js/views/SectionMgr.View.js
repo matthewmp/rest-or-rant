@@ -8,7 +8,7 @@ export default class SectionManagerView {
                 <span class="add-section-text">
                     Add Section
                 </span>
-                <button type="button">+</button>
+                <button id="btn-add-section" type="button">+</button>
             </div>
         </section>
         `;
