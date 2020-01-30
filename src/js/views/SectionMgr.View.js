@@ -24,6 +24,10 @@ export default class SectionManagerView {
             </div>
         </section>
         `;
+
+        // Bind methods
+        this.render = this.render.bind(this);
+        
     }
 
     render(){
