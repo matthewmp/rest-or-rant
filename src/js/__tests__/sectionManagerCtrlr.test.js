@@ -9,17 +9,17 @@ let view;
 let smCtrlr;
 
 beforeEach(() => {
+    document.body.innerHTML =
+    '<div>' +
+    '  <div id="root"></div>' +
+    '</div>';
+
     sectionManagerModel.clearAllSections();
     view = new sectionManagerView();
     smCtrlr = new sectionManagerCtrlr(model, view);
 })
 
 test('creates a new controller instance', () => {
-    document.body.innerHTML =
-    '<div>' +
-    '  <div id="root"></div>' +
-    '</div>';
-
     expect(smCtrlr.model).toEqual(model);
     expect(smCtrlr.view).toEqual(view);
 })
@@ -27,7 +27,6 @@ test('creates a new controller instance', () => {
 test('sectionManager add function can be called from controller', () => {
     const section = {sectionName: 'A', serverName: 'Van Halen'};
     smCtrlr.addSection(section);
-
     expect(smCtrlr.model.sections.length).toBe(1);
     expect(smCtrlr.model.sections[0].sectionName).toBe('A');
     expect(smCtrlr.model.sections[0].serverName).toBe('Van Halen');
