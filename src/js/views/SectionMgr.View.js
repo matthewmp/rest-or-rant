@@ -1,3 +1,7 @@
+import { sectionMgrTemplate } from './Templates';
+import * as Styler from '../libs/Styler';
+import { bind } from '../libs/EventBinder';
+
 export default class SectionManagerView {
     constructor(){
         this.app = document.getElementById('root');
@@ -7,64 +11,42 @@ export default class SectionManagerView {
         this.addSectionForm = null;
         this.btnAddSection = null;
 
-        this.template = `
-        <section class="section-manager-container">
-            <h3 class="section-manager-title">Restaurant Layout</h3>
-            <div class="add-section-container">
-                <form id="form-add-section">
-                    <input class="inp-add-section-name" placeholder="Enter Section Name" required="">
-                    <input class="inp-add-section-server-name" placeholder="Enter Server Name">
-                    <button class="btn-add-section-form" type="button">Submit</button>
-                    <button class="btn-close-add-section-form" type="button">X</button>
-                </form>
-                <span class="add-section-text">
-                    Add Section
-                </span>
-                <button id="btn-add-section" type="button">+</button>
-            </div>
-        </section>
-        `;
-
+        this.template = sectionMgrTemplate();
+        
         // Bind methods
         this.render = this.render.bind(this);
-        
     }
 
     render(){
         this.app.innerHTML = this.template;
-        document.querySelector('#form-add-section').style.visibility = 'hidden';
         this.grabElements();
     }
 
     grabElements(){
+        // Set contructor property values to HTML elements once rendered in browser
+        this.container = this.app.querySelector('.section-manager-container');
         this.addSectionForm = this.app.querySelector('#form-add-section');
         this.btnSubmitAddSectionForm = this.addSectionForm.querySelector('.btn-add-section-form');
-        this.container = this.app.querySelector('.section-manager-container');
         this.btnAddSection = this.container.querySelector('#btn-add-section');
     }
 
     showAddSectionForm() {
-        this.addSectionForm.style.visibility = 'visible';
+        Styler.visible(this.addSectionForm);
     }
 
     hideAddSectionForm() {
-        this.addSectionForm.style.visibility = 'hidden';
+        Styler.invisible(this.addSectionForm);
     }
 
     bindAddSectionFormSubmit(handler) {
-        this.btnSubmitAddSectionForm.addEventListener('click', event => {
-            handler();
-        })
+        bind('click', this.btnSubmitAddSectionForm, handler);
     }
 
     bindBtnAddSection(handler) {
-        this.btnAddSection.addEventListener('click', (e) => {
-            e.preventDefault();
-            handler();
-        })
+        bind('click', this.btnAddSection, handler);
     }
 
     handleSubmitAddSectionForm(e) {
-        // e.preventDefault();
+        
     }
 }

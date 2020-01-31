@@ -6,8 +6,9 @@ Manage your restaurant's reservation book
 
 ## Tech Stack
 - Parcel
-- TDD Approach Using Jest
-- OO JavaScript MVC & other design patterns(no frameworks)
+- TDD using Jest
+- OO JavaScript with SOLID Principles
+- MVC & other design patterns(no frameworks)
 - Flexbox
 
 ## Possible future additions
