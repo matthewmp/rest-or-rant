@@ -1,4 +1,5 @@
 import { SectionMgrTemplate } from './Templates';
+import * as Styler from '../libs/Styler';
 
 export default class SectionManagerView {
     constructor(){
@@ -13,7 +14,6 @@ export default class SectionManagerView {
         
         // Bind methods
         this.render = this.render.bind(this);
-        
     }
 
     render(){
@@ -34,7 +34,7 @@ export default class SectionManagerView {
     }
 
     hideAddSectionForm() {
-        this.addSectionForm.style.visibility = 'hidden';
+        Styler.invisible(this.addSectionForm)//.style.visibility = 'hidden';
     }
 
     bindAddSectionFormSubmit(handler) {
