@@ -1,4 +1,4 @@
-export const SectionMgrTemplate = () => {
+export const sectionMgrTemplate = () => {
     return    `
         <section class="section-manager-container">
             <h3 class="section-manager-title">Restaurant Layout</h3>

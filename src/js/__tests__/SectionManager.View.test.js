@@ -41,6 +41,7 @@ describe('should render all elements correctly', () => {
     test('should render & toggle .form-add-section', () => {
         const smContainer = root.querySelector('.section-manager-container');
         const form = smContainer.querySelector('#form-add-section');
+        form.style.visibility = 'hidden'; // Needed since CSS can't be initialized for test
         
         expect(window.getComputedStyle(form).visibility).toEqual('hidden');
         view.showAddSectionForm();

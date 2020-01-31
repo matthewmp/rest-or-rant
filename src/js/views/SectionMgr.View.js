@@ -1,5 +1,6 @@
-import { SectionMgrTemplate } from './Templates';
+import { sectionMgrTemplate } from './Templates';
 import * as Styler from '../libs/Styler';
+import { bind } from '../libs/EventBinder';
 
 export default class SectionManagerView {
     constructor(){
@@ -10,7 +11,7 @@ export default class SectionManagerView {
         this.addSectionForm = null;
         this.btnAddSection = null;
 
-        this.template = SectionMgrTemplate();
+        this.template = sectionMgrTemplate();
         
         // Bind methods
         this.render = this.render.bind(this);
@@ -18,39 +19,34 @@ export default class SectionManagerView {
 
     render(){
         this.app.innerHTML = this.template;
-        document.querySelector('#form-add-section').style.visibility = 'hidden';
         this.grabElements();
     }
 
     grabElements(){
+        // Set contructor property values to HTML elements once rendered in browser
+        this.container = this.app.querySelector('.section-manager-container');
         this.addSectionForm = this.app.querySelector('#form-add-section');
         this.btnSubmitAddSectionForm = this.addSectionForm.querySelector('.btn-add-section-form');
-        this.container = this.app.querySelector('.section-manager-container');
         this.btnAddSection = this.container.querySelector('#btn-add-section');
     }
 
     showAddSectionForm() {
-        this.addSectionForm.style.visibility = 'visible';
+        Styler.visible(this.addSectionForm);
     }
 
     hideAddSectionForm() {
-        Styler.invisible(this.addSectionForm)//.style.visibility = 'hidden';
+        Styler.invisible(this.addSectionForm);
     }
 
     bindAddSectionFormSubmit(handler) {
-        this.btnSubmitAddSectionForm.addEventListener('click', event => {
-            handler();
-        })
+        bind('click', this.btnSubmitAddSectionForm, handler);
     }
 
     bindBtnAddSection(handler) {
-        this.btnAddSection.addEventListener('click', (e) => {
-            e.preventDefault();
-            handler();
-        })
+        bind('click', this.btnAddSection, handler);
     }
 
     handleSubmitAddSectionForm(e) {
-        // e.preventDefault();
+        
     }
 }

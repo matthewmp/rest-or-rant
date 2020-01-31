@@ -27,6 +27,7 @@ cBlue2 {
 }
 
 #form-add-section {
+    visibility: hidden;
     position: absolute;
     top: 50vh;
     left: 50vh;
