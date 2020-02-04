@@ -1,5 +1,5 @@
-import sectionManager from '../../components/Section_Manager/SectionMgr.Model';
-import Table from '../../components/Table/Table';
+import sectionManager from '../../../components/Section_Manager/SectionMgr.Model';
+import Table from '../../../components/Table/Table';
 
 test('should create an instance of Table class', () => {
     expect(() => { // Requires 2 params (table #, max # of guests)
