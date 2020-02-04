@@ -12,6 +12,8 @@
 - Add account persistance (MongoDB)
 - Add authentication
 
-** Bind Close Form (X)
+** Rethink this component (Bind Close Form (X))
 ** Finish Binding Add Section Form Submit
+** Revisit/Refactor SectionMgr.Model with SOLID principles
+** Revisit/Refactor SectionMgr tests
 ** Test SectionCtrl
