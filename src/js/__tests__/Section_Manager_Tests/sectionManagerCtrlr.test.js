@@ -1,7 +1,7 @@
-import sectionManagerCtrlr from '../components/Section_Manager/SectionManagerCtrlr';
-import sectionManagerModel from '../components/Section_Manager/SectionMgr.Model';
-import sectionManagerView from '../components/Section_Manager/SectionMgr.View';
-import Section from '../components/Section/Section.Model';
+import sectionManagerCtrlr from '../../components/Section_Manager/SectionManagerCtrlr';
+import sectionManagerModel from '../../components/Section_Manager/SectionMgr.Model';
+import sectionManagerView from '../../components/Section_Manager/SectionMgr.View';
+import Section from '../../components/Section/Section.Model';
 
 const model = sectionManagerModel;
 

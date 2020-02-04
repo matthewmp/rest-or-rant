@@ -7,7 +7,7 @@ export default class SectionManagerController {
         this.model = model;
         this.view = view;
 
-        // this.handleAddSection = this.handleAddSection.bind(this);
+        this.handleAddSection = this.handleAddSection.bind(this);
         // this.handleAddSectionFormSubmit = this.handleAddSectionFormSubmit.bind(this);
 
         this.view.render();
@@ -25,10 +25,10 @@ export default class SectionManagerController {
         this.model.clearAllSections();
     }
 
-    // handleAddSection (){
-    //     // console.log('Adding Section', this);
-    //     this.view.showAddSectionForm();
-    // }
+    handleAddSection (){
+        console.log('Adding Section', this);
+        // this.view.showAddSectionForm();
+    }
 
     handleAddSectionFormSubmit() {
 

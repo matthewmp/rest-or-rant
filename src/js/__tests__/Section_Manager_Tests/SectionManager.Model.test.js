@@ -1,5 +1,5 @@
-import sectionManager from '../components/Section_Manager/SectionMgr.Model';
-import Section from '../components/Section/Section.Model';
+import sectionManager from '../../components/Section_Manager/SectionMgr.Model';
+import Section from '../../components/Section/Section.Model';
 
 
 beforeEach(() => {

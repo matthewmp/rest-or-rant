@@ -1,4 +1,4 @@
-import SectionView from '../components/Section_Manager/SectionMgr.View';
+import SectionView from '../../components/Section_Manager/SectionMgr.View';
 
 const view = new SectionView();
 

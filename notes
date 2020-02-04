@@ -12,7 +12,7 @@
 - Add account persistance (MongoDB)
 - Add authentication
 
-** Rethink this component (Bind Close Form (X))
+** Flesh out new component for Add Section Form
 ** Finish Binding Add Section Form Submit
 ** Revisit/Refactor SectionMgr.Model with SOLID principles
 ** Revisit/Refactor SectionMgr tests

@@ -15,7 +15,6 @@ class SectionManager {
         } else {
             throw new Error('Duplicate Section Name', this.sections);
         }
-        // this.onSectoinManagerChange(this.sections);
     }
 
     isSectionNameValid(sectionName) {
