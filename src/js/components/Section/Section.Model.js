@@ -9,7 +9,7 @@ export default class Section {
         // Check for name availability
         const name = sectionName.trim();
 
-        if(sectionManager.isSectionNameValid(name)){        
+        if(sectionManager.isSectionNameAvailable(name)){        
             this.sectionName = name;
             sectionManager.addNewSection(this);
         }
