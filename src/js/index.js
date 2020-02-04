@@ -1,9 +1,9 @@
-import Section from './models/sections/Section.Model';
-import sectionManager from './models/sections/SectionMgr.Model';
-import Table from './models/table/Table';
+import Section from './components/Section/Section.Model';
+import sectionManager from './components/Section_Manager/SectionMgr.Model';
+import Table from './components/Table/Table';
 
-import SectionMgrController from './controllers/SectionManagerCtrlr';
-import SectionMgrView from './views/SectionMgr.View';
+import SectionMgrController from './components/Section_Manager/SectionManagerCtrlr';
+import SectionMgrView from './components/Section_Manager/SectionMgr.View';
 
 import '../css/main.css';
 

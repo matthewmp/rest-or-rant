@@ -10,15 +10,14 @@ class SectionManager {
     }
 
     addNewSection(section) {
-        if(this.isSectionNameValid(section.sectionName)){
+        if(this.isSectionNameAvailable(section.sectionName)){
             this.sections.push(section);
         } else {
             throw new Error('Duplicate Section Name', this.sections);
         }
-        // this.onSectoinManagerChange(this.sections);
     }
 
-    isSectionNameValid(sectionName) {
+    isSectionNameAvailable(sectionName) {
         const newSectionName = sectionName.trim();
         if(this.sections.length === 0){            
             return true;

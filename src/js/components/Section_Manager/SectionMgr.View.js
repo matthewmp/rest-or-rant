@@ -1,6 +1,6 @@
 import { sectionMgrTemplate } from './Templates';
-import * as Styler from '../libs/Styler';
-import { bind } from '../libs/EventBinder';
+// import * as Styler from '../../libs/Styler';
+import { bind } from '../../libs/EventBinder';
 
 export default class SectionManagerView {
     constructor(){
@@ -10,6 +10,7 @@ export default class SectionManagerView {
         this.btnSubmitAddSectionForm = null;
         this.addSectionForm = null;
         this.btnAddSection = null;
+        this.btnCloseAddSectionForm = null;
 
         this.template = sectionMgrTemplate();
         
@@ -28,15 +29,16 @@ export default class SectionManagerView {
         this.addSectionForm = this.app.querySelector('#form-add-section');
         this.btnSubmitAddSectionForm = this.addSectionForm.querySelector('.btn-add-section-form');
         this.btnAddSection = this.container.querySelector('#btn-add-section');
+        this.btnCloseAddSectionForm = this.app.querySelector('.btn-close-add-section-form');
     }
 
-    showAddSectionForm() {
-        Styler.visible(this.addSectionForm);
-    }
+    // showAddSectionForm() {
+    //     Styler.visible(this.addSectionForm);
+    // }
 
-    hideAddSectionForm() {
-        Styler.invisible(this.addSectionForm);
-    }
+    // hideAddSectionForm() {
+    //     Styler.invisible(this.addSectionForm);
+    // }
 
     bindAddSectionFormSubmit(handler) {
         bind('click', this.btnSubmitAddSectionForm, handler);
@@ -47,6 +49,6 @@ export default class SectionManagerView {
     }
 
     handleSubmitAddSectionForm(e) {
-        
+ 
     }
 }

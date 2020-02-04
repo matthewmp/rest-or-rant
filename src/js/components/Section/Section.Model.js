@@ -1,4 +1,4 @@
-import sectionManager from './SectionMgr.Model';
+import sectionManager from '../Section_Manager/SectionMgr.Model';
 
 export default class Section {
     constructor(sectionName){
@@ -9,7 +9,7 @@ export default class Section {
         // Check for name availability
         const name = sectionName.trim();
 
-        if(sectionManager.isSectionNameValid(name)){        
+        if(sectionManager.isSectionNameAvailable(name)){        
             this.sectionName = name;
             sectionManager.addNewSection(this);
         }

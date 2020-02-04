@@ -1,5 +1,5 @@
-import sectionManager from '../models/sections/SectionMgr.Model';
-import Section from '../models/sections/Section.Model';
+import sectionManager from '../../../components/Section_Manager/SectionMgr.Model';
+import Section from '../../../components/Section/Section.Model';
 
 
 beforeEach(() => {
@@ -34,12 +34,12 @@ test('should throw error when creating section with duplicate name', () => {
 
 describe('should validate / reject section names', () => {
     test('should validate name to true', () => {
-        expect(sectionManager.isSectionNameValid('Test 1')).toBe(true);
+        expect(sectionManager.isSectionNameAvailable('Test 1')).toBe(true);
     })
 
     test('should return false for duplicate name', () => {
         const section1 = new Section('Test 1');
-        expect(sectionManager.isSectionNameValid('Test 1')).toBe(false);
+        expect(sectionManager.isSectionNameAvailable('Test 1')).toBe(false);
     })
 })
 
