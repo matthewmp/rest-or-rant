@@ -33,8 +33,11 @@ describe('should render all elements correctly', () => {
         expect(smContainer.getElementsByTagName('h3')[0].textContent).toEqual('Restaurant Layout');
         expect(smContainer.getElementsByTagName('span')[0].textContent.trim()).toEqual('Add Section');
         
-        expect(smContainer.getElementsByTagName('button')[2].id).toEqual('btn-add-section');
-        expect(smContainer.getElementsByTagName('button')[2].textContent).toEqual('+');
+        // Flesh out to AddSectionForm View Test
+        // expect(smContainer.getElementsByTagName('button')[2].id).toEqual('btn-add-section');
+
+        
+        expect(smContainer.getElementsByTagName('button')[0].textContent).toEqual('+');
     })
 
     // test('should render & toggle .form-add-section', () => {

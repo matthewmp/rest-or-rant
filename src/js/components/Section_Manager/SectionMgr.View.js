@@ -27,9 +27,12 @@ export default class SectionManagerView {
         // Set contructor property values to HTML elements once rendered in browser
         this.container = this.app.querySelector('.section-manager-container');
         this.addSectionForm = this.app.querySelector('#form-add-section');
-        this.btnSubmitAddSectionForm = this.addSectionForm.querySelector('.btn-add-section-form');
+        
+        // Fleshing out to AddSectinoForm View
+        // this.btnSubmitAddSectionForm = this.addSectionForm.querySelector('.btn-add-section-form');
+        // this.btnCloseAddSectionForm = this.app.querySelector('.btn-close-add-section-form');
         this.btnAddSection = this.container.querySelector('#btn-add-section');
-        this.btnCloseAddSectionForm = this.app.querySelector('.btn-close-add-section-form');
+        
     }
 
     // showAddSectionForm() {

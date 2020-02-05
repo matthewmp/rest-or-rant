@@ -1,4 +1,3 @@
-- Abstract out isSectionNameValid from SectionMgr to lib
 - Make Controllers / Views for models (Mobile First)
 - Create Customer Model
 - Add Open # of Tables/Filled % Components as Section children
@@ -6,14 +5,15 @@
   length of time at table, next customer, next customer res. time)
 
 - Add undo/redo with state managment
-- Add Error Logger/Handler Class
 
 - Add session persistance (local storage)
 - Add account persistance (MongoDB)
 - Add authentication
 
-** Flesh out new component for Add Section Form
-** Finish Binding Add Section Form Submit
+** Flesh out new component for Add Section Form MVC in order w/TDD
 ** Revisit/Refactor SectionMgr.Model with SOLID principles
 ** Revisit/Refactor SectionMgr tests
 ** Test SectionCtrl
+** Delete all commented out methods / tests
+
+** Add Error Logger/Handler Class
