@@ -53,7 +53,7 @@ test('should render template without failing', () => {
 let smContainer;
 describe('should have all elements in constructor after render', () => {
     beforeEach(() => {
-        view.render();
+        view.init();
         smContainer = document.querySelector('.section-manager-container');
     })
 

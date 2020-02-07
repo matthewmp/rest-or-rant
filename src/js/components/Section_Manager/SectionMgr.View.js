@@ -18,21 +18,21 @@ export default class SectionManagerView {
         this.render = this.render.bind(this);
     }
 
+    init() {
+        this.render()
+        this.grabElements();
+    }
+
     render(){
         this.app.innerHTML = this.template;
-        this.grabElements();
+        // this.grabElements();
     }
 
     grabElements(){
         // Set contructor property values to HTML elements once rendered in browser
         this.container = this.app.querySelector('.section-manager-container');
         this.addSectionForm = this.app.querySelector('#form-add-section');
-        
-        // Fleshing out to AddSectinoForm View
-        // this.btnSubmitAddSectionForm = this.addSectionForm.querySelector('.btn-add-section-form');
-        // this.btnCloseAddSectionForm = this.app.querySelector('.btn-close-add-section-form');
         this.btnAddSection = this.container.querySelector('#btn-add-section');
-        
     }
 
     // showAddSectionForm() {

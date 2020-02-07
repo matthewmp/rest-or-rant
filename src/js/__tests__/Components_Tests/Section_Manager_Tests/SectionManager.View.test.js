@@ -9,7 +9,7 @@ beforeEach(() => {
     '</div>';
 
     view.app = document.getElementById('root');
-    view.render();
+    view.init();
 })
 
 describe('should render all elements correctly', () => {

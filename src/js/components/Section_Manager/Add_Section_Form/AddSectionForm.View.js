@@ -13,9 +13,13 @@ export default class AddSectionForm {
         this.render = this.render.bind(this);
     }
 
+    init(){
+        this.render();
+        this.grabElements();
+    }
+
     render(){
         this.parentNode.innerHTML += this.template;
-        this.grabElements();
     }
 
     grabElements(){

@@ -8,12 +8,10 @@ export default class SectionManagerController {
         this.view = view;
 
         this.handleAddSection = this.handleAddSection.bind(this);
-        // this.handleAddSectionFormSubmit = this.handleAddSectionFormSubmit.bind(this);
 
-        this.view.render();
-        // console.log('View: ', this.view, 'Model: ', this.model)
+        this.view.init();
+        
         // Bind events
-        // this.view.bindAddSectionFormSubmit(this.handleAddSectionFormSubmit);
         this.view.bindBtnAddSection(this.handleAddSection);
     }
 
@@ -26,12 +24,6 @@ export default class SectionManagerController {
     }
 
     handleAddSection (){
-        console.log('Adding Section', this);
-        // this.view.showAddSectionForm();
-    }
-
-    handleAddSectionFormSubmit() {
-
-        // console.log('Handled from Ctrlr', this);
+        console.log('Adding Section');
     }
 }
