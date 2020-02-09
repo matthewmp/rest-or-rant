@@ -1,4 +1,5 @@
 import View from '../../../components/Section_Manager/Add_Section_Form/AddSectionForm.View'
+import { addSectionFormTemplate } from '../../../components/Section_Manager/Add_Section_Form/AddSectinoForm.Template';
 
 let view;
 
@@ -38,15 +39,7 @@ test('parent node should be .section-manager-container', () => {
 })
 
 test('should render template without failing', () => {
-    expect(view.template).toEqual(
-        `
-        <form id="form-add-section">
-            <input class="inp-add-section-name" placeholder="Enter Section Name" required="">
-            <input class="inp-add-section-server-name" placeholder="Enter Server Name">
-            <button class="btn-submit-section-form" type="button">Submit</button>
-            <button class="btn-close-add-section-form" type="button">X</button>
-        </form>
-        `);
+    expect(view.template).toEqual(addSectionFormTemplate());
 })
 
 
@@ -78,27 +71,62 @@ describe('should have all elements in constructor after render', () => {
     })
 });
 
-// test('should render & toggle .form-add-section', () => {
-    //     const smContainer = root.querySelector('.section-manager-container');
-    //     const form = smContainer.querySelector('#form-add-section');
-    //     form.style.visibility = 'hidden'; // Needed since CSS can't be initialized for test
+test('should render & toggle .form-add-section', () => {
+    view.init();
+    view.form.style.visibility = 'hidden'; // Needed since CSS can't be initialized for test
+    
+    expect(window.getComputedStyle(view.form).visibility).toEqual('hidden');
+    view.showForm();
+    expect(window.getComputedStyle(view.form).visibility).toEqual('visible');
+    view.hideForm();
+    expect(window.getComputedStyle(view.form).visibility).toEqual('hidden');
+})
+
+describe('should get/reset input values without failing', () => {
+    beforeEach(() => {
+        view.init();
+    })
+
+    test('should get section name input value',() => {
+        const testName = 'Section A';
+        view.inpSectionName.value = testName;
         
-    //     expect(window.getComputedStyle(form).visibility).toEqual('hidden');
-    //     view.showAddSectionForm();
-    //     expect(window.getComputedStyle(form).visibility).toEqual('visible');
-    //     view.hideAddSectionForm();
-    //     expect(window.getComputedStyle(form).visibility).toEqual('hidden');
-    // })
+        expect(view.getSectionName()).toEqual(testName);
+    })
 
+    test('should get server name input value',() => {
+        const testName = 'Test Name 1';
+        view.inpServerName.value = testName;
+        
+        expect(view.getServerName()).toEqual(testName);
+    })
 
-// Close form
-// test('Add section form should close when x is clicked', () => {
-//     const closeButton = document.querySelector('.btn-close-add-section-form');
+    test('should reset form inputs', () => {
+        // Set input values
+        const serverName = 'Test Name 1';
+        const sectionName = 'Section A';
+        view.inpSectionName.value = sectionName;
+        view.inpServerName.value = serverName;
 
-//     // open form
-//     view.showAddSectionForm();
+        view.resetFormInputs();
 
-//     // PENDING CHANGES TO MODEL
-//     // closeButton.click();
-//     // expect(view.handleSubmitAddSectionForm).toHaveBeenCalled();
-// })
+        expect(view.inpSectionName.value).toBeFalsy();
+        expect(view.inpSectionName.value).toBe(undefined);
+
+        expect(view.inpServerName.value).toBeFalsy();
+        expect(view.inpServerName.value).toBe(undefined);
+    })
+})
+
+describe('should handle click/submit events correctly when buttons clicked', () => {
+    beforeEach(() => {
+        view.init();
+        view.form.style.visibility = 'visible'; // Needed since CSS can't be initialized for test
+    })
+
+    test('should hide form when close button clicked', () => {
+        view.btnCloseForm.click();
+
+        expect(view.form.style.visibility).toEqual('hidden');
+    })
+})

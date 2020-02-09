@@ -1,4 +1,6 @@
 import { addSectionFormTemplate } from '../Add_Section_Form/AddSectinoForm.Template';
+import * as Styler from '../../../libs/Styler';
+import { bind } from '../../../libs/EventBinder';
 
 export default class AddSectionForm {
     constructor(){
@@ -28,5 +30,31 @@ export default class AddSectionForm {
         this.inpServerName = this.parentNode.querySelector('.inp-add-section-server-name');
         this.btnSubmitForm = this.parentNode.querySelector('.btn-submit-section-form');
         this.btnCloseForm = this.parentNode.querySelector('.btn-close-add-section-form');
+    }
+
+    showForm(){
+        Styler.visible(this.form);
+    }
+
+    hideForm(){
+        Styler.invisible(this.form);
+    }
+
+    getSectionName(){
+        return this.inpSectionName.value;
+    }
+
+    getServerName(){
+        return this.inpServerName.value;
+    }
+
+    resetFormInputs(){
+        this.inpSectionName = '';
+        this.inpServerName = '';
+    }
+
+    // Bind event to hide form when close button clicked
+    bindCloseFormButton(){
+        bind('click', this.btnCloseForm, this.hideForm);
     }
 }

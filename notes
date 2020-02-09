@@ -10,7 +10,7 @@
 - Add account persistance (MongoDB)
 - Add authentication
 
-** Flesh out new component for Add Section Form MVC in order w/TDD
+** Flesh out AddSectionForm Controller (test close/submit buttons)
 ** Revisit/Refactor SectionMgr.Model with SOLID principles
 ** Revisit/Refactor SectionMgr tests
 ** Test SectionCtrl
