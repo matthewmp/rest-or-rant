@@ -1,5 +1,6 @@
 export const bind = (eventType, targetElement, handlerFunction) => {
-    targetElement.addEventListener(eventType, () => {
+    targetElement.addEventListener(eventType, (event) => {
+        event.preventDefault();
         handlerFunction()
     })
 }

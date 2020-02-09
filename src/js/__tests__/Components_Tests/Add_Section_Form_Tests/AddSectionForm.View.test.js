@@ -129,4 +129,16 @@ describe('should handle click/submit events correctly when buttons clicked', () 
 
         expect(view.form.style.visibility).toEqual('hidden');
     })
+
+    test('should invoke callback function when form submited with propper arguments', () => {
+        const controllerCallBack = jest.fn();
+
+        view.inpSectionName.value = 'Section A';
+        view.inpServerName.value = 'Server 1';
+        
+        view.bindSubmitFormButton(controllerCallBack)
+
+        expect(controllerCallBack).toHaveBeenCalledTimes(1);
+        expect(controllerCallBack).toBeCalledWith({"sectionName": "Section A", "serverName": "Server 1"});
+    })
 })

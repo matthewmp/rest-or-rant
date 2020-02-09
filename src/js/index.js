@@ -9,5 +9,5 @@ import AddSectionView from './components/Section_Manager/Add_Section_Form/AddSec
 import '../css/main.css';
 
 const smController = new SectionMgrController(sectionManager, new SectionMgrView());
-// const addSectionView = new AddSectionView();
-// addSectionView.init();
+window.addSectionView = new AddSectionView();
+addSectionView.init();

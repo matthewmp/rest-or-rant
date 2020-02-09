@@ -13,11 +13,16 @@ export default class AddSectionForm {
         this.template = addSectionFormTemplate();
 
         this.render = this.render.bind(this);
+        this.bindCloseFormButton = this.bindCloseFormButton.bind(this);
+        this.hideForm = this.hideForm.bind(this);
+        this.bindSubmitFormButton = this.bindSubmitFormButton.bind(this);
     }
 
     init(){
         this.render();
         this.grabElements();
+        this.bindCloseFormButton();
+        // this.bindSubmitFormButton();
     }
 
     render(){
@@ -56,5 +61,14 @@ export default class AddSectionForm {
     // Bind event to hide form when close button clicked
     bindCloseFormButton(){
         bind('click', this.btnCloseForm, this.hideForm);
+    }
+
+    bindSubmitFormButton(handler){
+        const inpData = { 
+            sectionName: this.inpSectionName.value.trim(),
+            serverName: this.inpServerName.value.trim()
+        }
+
+        bind('submit', this.form, handler(inpData));
     }
 }
