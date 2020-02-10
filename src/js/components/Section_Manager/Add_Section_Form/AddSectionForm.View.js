@@ -2,7 +2,7 @@ import { addSectionFormTemplate } from '../Add_Section_Form/AddSectinoForm.Templ
 import * as Styler from '../../../libs/Styler';
 import { bind } from '../../../libs/EventBinder';
 
-export default class AddSectionForm {
+export default class AddSectionFormView {
     constructor(){
         this.parentNode = document.getElementsByClassName('section-manager-container')[0];
         this.form = null;
@@ -14,15 +14,13 @@ export default class AddSectionForm {
 
         this.render = this.render.bind(this);
         this.bindCloseFormButton = this.bindCloseFormButton.bind(this);
-        this.hideForm = this.hideForm.bind(this);
-        this.bindSubmitFormButton = this.bindSubmitFormButton.bind(this);
+        this.hideForm = this.hideForm.bind(this);    
     }
 
     init(){
         this.render();
         this.grabElements();
         this.bindCloseFormButton();
-        // this.bindSubmitFormButton();
     }
 
     render(){
@@ -64,11 +62,12 @@ export default class AddSectionForm {
     }
 
     bindSubmitFormButton(handler){
-        const inpData = { 
-            sectionName: this.inpSectionName.value.trim(),
-            serverName: this.inpServerName.value.trim()
-        }
-
-        bind('submit', this.form, handler(inpData));
+        this.btnSubmitForm.addEventListener('click', (e) => {
+            const inpData = { 
+                sectionName: this.inpSectionName.value.trim(),
+                serverName: this.inpServerName.value.trim()
+            }
+            handler(inpData)
+        })
     }
 }

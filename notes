@@ -10,7 +10,9 @@
 - Add account persistance (MongoDB)
 - Add authentication
 
-** Flesh out AddSectionForm Controller (test close/submit buttons)
+** Hide Form on successful submit
+** Figure out messaging service for app
+** Bind click "+" button to add section to show form
 ** Revisit/Refactor SectionMgr.Model with SOLID principles
 ** Revisit/Refactor SectionMgr tests
 ** Test SectionCtrl

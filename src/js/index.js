@@ -6,8 +6,10 @@ import SectionMgrController from './components/Section_Manager/SectionManagerCtr
 import SectionMgrView from './components/Section_Manager/SectionMgr.View';
 
 import AddSectionView from './components/Section_Manager/Add_Section_Form/AddSectionForm.View';
+import AddSectionModel from './components/Section_Manager/Add_Section_Form/AddSectionForm.Model';
+import AddSectionController from './components/Section_Manager/Add_Section_Form/AddSectionForm.Controller';
 import '../css/main.css';
 
 const smController = new SectionMgrController(sectionManager, new SectionMgrView());
-window.addSectionView = new AddSectionView();
-addSectionView.init();
+const addSectionController = new AddSectionController(new AddSectionModel, new AddSectionView);
+

@@ -14,12 +14,13 @@ export default class AddSectionFormModel{
         else {
             throw new Error('Section Name must be a string of characters')
         }
+        
     }
 
     setServerNameValue(strServerName){
         const parsedStrName = strServerName.trim();
         if(isSectionNameValid(parsedStrName)){
-            this.sectionServerValue = parsedStrName;
+            this.serverNameValue = parsedStrName;
         }
         else {
             throw new Error('Server Name must be a string of characters')

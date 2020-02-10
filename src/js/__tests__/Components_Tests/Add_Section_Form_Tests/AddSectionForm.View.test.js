@@ -137,7 +137,7 @@ describe('should handle click/submit events correctly when buttons clicked', () 
         view.inpServerName.value = 'Server 1';
         
         view.bindSubmitFormButton(controllerCallBack)
-
+        view.btnSubmitForm.click();
         expect(controllerCallBack).toHaveBeenCalledTimes(1);
         expect(controllerCallBack).toBeCalledWith({"sectionName": "Section A", "serverName": "Server 1"});
     })

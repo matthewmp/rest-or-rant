@@ -68,7 +68,7 @@ describe('should update sectionNameValue with valid input', () => {
     })
 })
 
-describe('should throw error for invalid section names', () => {
+describe('should throw error for invalid server names', () => {
     expect(() => {
         model.setServerNameValue('')
     }).toThrow()
@@ -106,3 +106,19 @@ describe('should throw error for invalid section names', () => {
     }).toThrow()
 })
   
+describe('should update serverNameValue with valid input', () => {
+    test('should set sectionName to "A"', () => {
+        model.setServerNameValue('A');
+        expect(model.serverNameValue).toBe('A')
+    })
+
+    test('should set sectionName to "A"', () => {
+        model.setServerNameValue('A    ');
+        expect(model.serverNameValue).toBe('A')
+    })
+
+    test('should set sectionName to "A"', () => {
+        model.setServerNameValue('     A    ');
+        expect(model.serverNameValue).toBe('A')
+    })
+})
