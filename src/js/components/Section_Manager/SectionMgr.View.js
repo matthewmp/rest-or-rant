@@ -1,16 +1,15 @@
 import { sectionMgrTemplate } from './Templates';
-// import * as Styler from '../../libs/Styler';
+import * as Styler from '../../libs/Styler';
 import { bind } from '../../libs/EventBinder';
 
 export default class SectionManagerView {
     constructor(){
         this.app = document.getElementById('root');
         this.conatainer = null;
-        this.addSectionContainer = null;
+        // this.addSectionContainer = null;
         this.btnSubmitAddSectionForm = null;
         this.addSectionForm = null;
         this.btnAddSection = null;
-        this.btnCloseAddSectionForm = null;
 
         this.template = sectionMgrTemplate();
         
@@ -35,19 +34,13 @@ export default class SectionManagerView {
         this.btnAddSection = this.container.querySelector('#btn-add-section');
     }
 
-    // showAddSectionForm() {
-    //     Styler.visible(this.addSectionForm);
-    // }
-
-    // hideAddSectionForm() {
-    //     Styler.invisible(this.addSectionForm);
-    // }
-
     bindAddSectionFormSubmit(handler) {
+        // console.log('form: ', this.addSectionForm)
         bind('click', this.btnSubmitAddSectionForm, handler);
     }
 
     bindBtnAddSection(handler) {
+        // console.log('Binding Add Section Form Button')
         bind('click', this.btnAddSection, handler);
     }
 

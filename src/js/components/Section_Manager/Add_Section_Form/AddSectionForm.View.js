@@ -13,8 +13,8 @@ export default class AddSectionFormView {
         this.template = addSectionFormTemplate();
 
         this.render = this.render.bind(this);
-        this.bindCloseFormButton = this.bindCloseFormButton.bind(this);
-        this.hideForm = this.hideForm.bind(this);    
+        this.bindCloseFormButton = this.bindCloseFormButton.bind(this);  
+        this.removeForm = this.removeForm.bind(this);
     }
 
     init(){
@@ -24,7 +24,10 @@ export default class AddSectionFormView {
     }
 
     render(){
-        this.parentNode.innerHTML += this.template;
+        let div = document.createElement('div');
+        div.innerHTML = this.template;
+        div.id = 'addSectionFormContainer';
+        this.parentNode.appendChild(div);
     }
 
     grabElements(){
@@ -35,12 +38,8 @@ export default class AddSectionFormView {
         this.btnCloseForm = this.parentNode.querySelector('.btn-close-add-section-form');
     }
 
-    showForm(){
-        Styler.visible(this.form);
-    }
-
-    hideForm(){
-        Styler.invisible(this.form);
+    removeForm(){
+        this.parentNode.removeChild(this.form.parentNode);
     }
 
     getSectionName(){
@@ -58,7 +57,7 @@ export default class AddSectionFormView {
 
     // Bind event to hide form when close button clicked
     bindCloseFormButton(){
-        bind('click', this.btnCloseForm, this.hideForm);
+        bind('click', this.btnCloseForm, this.removeForm);
     }
 
     bindSubmitFormButton(handler){

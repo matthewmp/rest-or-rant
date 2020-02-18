@@ -22,6 +22,7 @@ export default class AddSectionFormController{
     }
 
     handleFormSubmit(addSectionFormDataObj){
+        // console.log(this)
          if(addSectionFormDataObj.sectionName){
              this.setSectionName(addSectionFormDataObj.sectionName.trim());
              if(addSectionFormDataObj.serverName){
@@ -31,6 +32,5 @@ export default class AddSectionFormController{
          else if(!addSectionFormDataObj.sectionName){
              return;
          }
-         
     }
 }

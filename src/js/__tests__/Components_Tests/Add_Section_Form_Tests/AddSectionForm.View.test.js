@@ -73,13 +73,16 @@ describe('should have all elements in constructor after render', () => {
 
 test('should render & toggle .form-add-section', () => {
     view.init();
-    view.form.style.visibility = 'hidden'; // Needed since CSS can't be initialized for test
+    let el = document.querySelector('#addSectionFormContainer');
+    let close = document.querySelector('.btn-close-add-section-form');
+
+    expect(el.firstElementChild.id).toEqual('form-add-section');
+
+    close.click();
     
-    expect(window.getComputedStyle(view.form).visibility).toEqual('hidden');
-    view.showForm();
-    expect(window.getComputedStyle(view.form).visibility).toEqual('visible');
-    view.hideForm();
-    expect(window.getComputedStyle(view.form).visibility).toEqual('hidden');
+    let element = document.querySelector('#addSectionFormContainer');
+    expect(element).toBe(null);
+    
 })
 
 describe('should get/reset input values without failing', () => {
@@ -122,12 +125,6 @@ describe('should handle click/submit events correctly when buttons clicked', () 
     beforeEach(() => {
         view.init();
         view.form.style.visibility = 'visible'; // Needed since CSS can't be initialized for test
-    })
-
-    test('should hide form when close button clicked', () => {
-        view.btnCloseForm.click();
-
-        expect(view.form.style.visibility).toEqual('hidden');
     })
 
     test('should invoke callback function when form submited with propper arguments', () => {

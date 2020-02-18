@@ -10,8 +10,11 @@
 - Add account persistance (MongoDB)
 - Add authentication
 
+** Start with Add Section Form Hidden
+** Show Add Section Form when "+" is clicked
 ** Hide Form on successful submit
 ** Figure out messaging service for app
+** Add error handling for Add Section Form Submission
 ** Bind click "+" button to add section to show form
 ** Revisit/Refactor SectionMgr.Model with SOLID principles
 ** Revisit/Refactor SectionMgr tests
